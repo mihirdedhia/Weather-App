@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="images/weather_favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-image1">
+
+        <!-- Toggle Button Start -->
+
+        <div class="button" id="toggle-button">
+            <input type="checkbox" class="checkbox">
+            <div class="temp-units">
+                <span>°C</span>
+            </div>
+            <div class="layer"></div>
+        </div>
+
+        <!-- Toggle Button End -->
+
+        <!-- Search and Notification Start -->
+
+        <div class="search-n-notification">
+            <div class="search-container">
+                <input type="text" name="search-box" id="search-box" placeholder="Search Location...">
+                <button class="search-btn" id="search-btn">
+                    <i class="fa fa-search">
+                    </i>
+                </button>
+            </div>
+            <div class="notification-container">
+
+            </div>
+        </div>
+
+        <!-- Search and Notification End -->
+
+        <!-- Weather Main Start -->
+
+        <div class="weather-main">
+
+            <div class="weather-info">
+                <div class="weather-info__city-country"></div>
+                <div class="weather-info__date"></div>
+                <div class="weather-info__time"></div>
+                <div class="weather-info-center">
+                    <div class="weather-info__temperature-description">
+                        <div class="weather-info__temperature_outer_container">
+                            <div class="weather-info__temperature temp_value"></div>
+                            <pre class="temp_unit"> °C</pre>
+                        </div>
+                        <div class="weather-info__description"></div>
+                    </div>
+                    <img src="" alt="weather icon image" class="weather-info__icon">
+                </div>
+            </div>
+
+            <div class="weather-details-container">
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Feels_Like.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Feels Like</div>
+                        <div class="weather-details__data_outer_container">
+                            <div class="weather-details__data temp_value" id="feels-like"></div>
+                            <pre class="temp_unit"> °C</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Humidity.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Humidity</div>
+                        <div class="weather-details__data" id="humidity"> <span>%</span></div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Chance_of_Rain.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Chance of Rain</div>
+                        <div class="weather-details__data" id="chance-of-rain"> <span>%</span></div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Wind_Speed.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Wind Speed</div>
+                        <div class="weather-details__data" id="wind-speed"> <span>m/s</span></div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Sunrise.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Sunrise</div>
+                        <div class="weather-details__data" id="sunrise"></div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Sunset.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Sunset</div>
+                        <div class="weather-details__data" id="sunset"></div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/Pressure.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">Pressure</div>
+                        <div class="weather-details__data" id="pressure"> <span>hPa</span></div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <img src="images/weather_details_svg_images/UV_Index.svg" alt="weather icon image" class="weather-details__icon">
+                    <div class="weather-details__info">
+                        <div class="weather-details__label">UV Index</div>
+                        <div class="weather-details__data" id="uv_index"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Weather Main End -->
+
+    </div>
+
+    <div class="bg2">
+
+        <!-- Weather Forecast Start -->
+
+        <div class="weather-forecast">
+
+            <!-- Tab Buttons -->
+            <div class="tabs">
+                <div class="tab-btn active-tab" data-forecast_type="hourly">Hourly</div>
+                <div class="tab-btn" data-forecast_type="weekly">Weekly</div>
+            </div>
+
+            <!-- Tab Content - Hourly and Weekly Forecast -->
+            <div class="tab-content-container">
+                <div class="tab-content active-tab-content" id="hourly">
+                    <p class="heading">Hourly Forecast</p>
+                    <div class="forecast-hourly-container">
+
+                    </div>
+                </div>
+                <div class="tab-content" id="weekly">
+                    <p class="heading">Weekly Forecast</p>
+                    <div class="forecast-weekly-container">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Weather Forecast End -->
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
